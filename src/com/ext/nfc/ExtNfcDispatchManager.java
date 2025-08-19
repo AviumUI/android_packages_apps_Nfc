@@ -85,7 +85,7 @@ public class ExtNfcDispatchManager {
         intentFilter.addAction(Intent.ACTION_PACKAGE_CHANGED);
         intentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
         intentFilter.addDataScheme("package");
-        context.registerReceiverAsUser(mReceiver, UserHandle.ALL, intentFilter, null, null);
+        context.registerReceiver(mReceiver, intentFilter);
     }
 
     private void loadRules(Context context) {
