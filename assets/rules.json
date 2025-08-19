@@ -1,0 +1,26 @@
+{
+  "rule_group": [
+    {
+      "rule_type": "NDEF",
+      "rules": [
+        {
+          "record_type": "application/com.tag.tagpay",
+          "record": "^(000201|000202).*",
+          "components": [
+            "com.unionpay/.activity.mine.UPActivityReadNFCTag"
+          ],
+          "description": "银联碰一碰"
+        },
+        {
+          "record_type": "android.com:pkg",
+          "record": "com.eg.android.AlipayGphone",
+          "components": [
+            "com.eg.android.AlipayGphone/com.alipay.mobile.quinox.SchemeLauncherActivity"
+          ],
+          "description": "支付宝标签"
+        }
+      ]
+    }
+  ],
+  "version": "1.0"
+}
