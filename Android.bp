@@ -3,6 +3,14 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+prebuilt_etc {
+    name: "privapp_permissions_com.android.nfc.xml", 
+    src: "com.android.nfc.xml",
+    sub_dir: "permissions", 
+    filename_from_src: true,
+    product_specific: false,
+}
+
 genrule {
     name: "statslog-Nfc-java-gen",
     tools: ["stats-log-api-gen"],
@@ -80,6 +88,7 @@ android_app {
         // Provide a default libnfc-nci.conf in /system/etc for devices that
         // does not ship one in /product
         "libnfc-nci.conf-default",
+        "privapp_permissions_com.android.nfc.xml",
     ],
     lint: {
         baseline_filename: "lint-baseline-nfcnci.xml",
@@ -98,6 +107,7 @@ android_app {
     updatable: false, // TODO: fix this.
     sdk_version: "module_current",
     certificate: "nfc",
+    required: ["privapp_permissions_com.android.nfc.xml"],
     srcs: [
         ":nfc-sources",
         "shim_src/apex/**/*.java",
