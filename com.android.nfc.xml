@@ -38,5 +38,6 @@
         <permission name="android.permission.MODIFY_PHONE_STATE"/>
         <permission name="android.permission.WRITE_SECURITY_LOG"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
     </privapp-permissions>
 </permissions>
